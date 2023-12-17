@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  background-image: linear-gradient(to bottom right, #9e94a0 0%, #c4151b 80%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  overflow: visible;
+}
+
+.column {
+  float: left;
+}
+.left {
+  width: 37%;
+  padding: 2%;
+}
+.right {
+  width: 63%;
+}
+
+.overlay {
+  background-image: url(./images/9368246.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.container {
+  margin: 0 auto;
+  background-image: url(./images/slot-machine-pngwingDOTcom.png);
+  margin-bottom: 20px;
+  padding-left: 0.5%;
+  /* width: 85%; */
+  /* height: auto; */
+  width: 84%;
+  height: 69vh;
+  background-size: cover;
+  /* background-position: center; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.slot-item {
+  background-color: rgba(226, 5, 5, 0.329);
+  height: 33%;
+  width: 17.7%;
+  margin-top: 52%;
+  padding: 0.4%;
+}
+
+.slot-image {
+  height: 100%;
+  width: auto;
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(-05deg, #7dafd3, #eaeaea, #aeb3b6);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+}
+
+.slot-image img {
+  width: 100%;
+  height: auto;
+}
+
+.slot-image img.animate {
+  animation: slideDown 0.1s ease-in-out infinite;
+}
+
+.bet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to top left, #9e94a0 0%, #c4151b 80%);
+  padding: 15px;
+  border-radius: 33px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5%;
+  height: 25%;
+  width: 95%;
+  max-width: 100%;
+  border: 10px solid transparent;
+}
+
+.score {
+  margin-bottom: 5%;
+}
+.score p {
+  font-family: "Nunito", sans-serif;
+  font-size: xx-large;
+  font-weight: 500;
+  margin: 0;
+  color: antiquewhite;
+}
+.score p .money {
+  display: block;
+  margin-top: 2%;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  background: linear-gradient(-05deg, #7dafd3, #eaeaea, #aeb3b6);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  color: darkgoldenrod;
+}
+
+.choice {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* height: 40vh; */
+}
+
+button {
+  flex-grow: 1;
+  /* background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+  /* border: none;
+  width: 30%;
+  max-width: 100px; */
+}
+
+.btnPelaa {
+  font-family: "Nunito";
+  font-weight: bold;
+  font-size: 3em;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0px;
+  cursor: pointer;
+  background: linear-gradient(-05deg, #ffd799, #ffcc00);
+  background-size: cover;
+  background-position: center;
+  width: 85%;
+  /* max-width: 300px; */
+  margin: 35px auto;
+  transition: all 0.3s ease;
+  border-radius: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+/* adding effect on hover */
+.btnPelaa:hover {
+  border-color: #0066cc;
+  background: linear-gradient(-05deg, #ffd700, #ffcc00);
+  box-shadow: 0 0 15px rgba(0, 102, 204, 0.7);
+}
+
+.btnPelaa:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+#oneEuro,
+#twoEuro,
+#threeEuro {
+  height: 110px;
+  width: 95%;
+  max-width: 110px;
+  border-radius: 45px;
+  border: 5px solid #2e24b19f;
+  /* margin: 5px; */
+}
+
+#oneEuro {
+  background-image: url(./images/oneEuro.png);
+  background-size: 135%;
+  background-position: 50% 20%;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#twoEuro {
+  background-image: url(./images/twoEuros.png);
+  background-size: 135%;
+  background-position: 50% 20%;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#threeEuro {
+  background-image: url(./images/threeEuros.png);
+  background-size: 135%;
+  background-position: 50% 20%;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 0.1em;
+  font-size: 1em;
+  text-align: center;
+  z-index: 2;
+}
+
+/* adding a keyframe animation that transform the img based on Y axis effect similar to image sliding from up to down with the overflow of .slot-image hidden */
+@keyframes slideDown {
+  0% {
+    filter: blur(5px);
+    transform: translateY(-100px);
+  }
+  100% {
+    filter: blur(5px);
+    transform: translateY(100px);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+  button {
+    width: 25%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+}

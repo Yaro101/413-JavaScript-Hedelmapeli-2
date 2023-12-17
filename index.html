@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hedelmäpeli</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="overlay"></div>
+
+    <div class="row">
+      <div class="column left">
+        <div class="bet">
+          <div class="score">
+            <p>RAHAA:<br /><span class="money">20€</span></p>
+            <p>PANO: <span class="pano">0€</span></p>
+            <div class="rules">
+              <img src="./images/rules3.gif" alt="Rules" />
+            </div>
+          </div>
+          <div class="choice">
+            <img
+              src="./images/1_euro-icon-by Md Tanvirul Haque from Freepik.png"
+              id="oneEuro"
+              alt="Euro icon"
+            />
+            <img
+              src="./images/2_euro-icon-by Md Tanvirul Haque from Freepik.png"
+              id="twoEuro"
+              alt="Euro icon"
+            />
+            <img
+              src="./images/3_euro-icon-by Md Tanvirul Haque from Freepik.png"
+              id="threeEuro"
+              alt="Euro icon"
+            />
+          </div>
+        </div>
+        <button class="btnPelaa">PELAA</button>
+      </div>
+      <div class="column right">
+        <div class="container">
+          <img
+            src="./images/slot-machine-pngwingDOTcom.png"
+            alt="Slot machine"
+          />
+          <div class="slots">
+            <div class="slot-item">
+              <div class="slot-image">
+                <img src="./images/lemon.png" alt="Lemon" />
+              </div>
+            </div>
+            <div class="slot-item">
+              <div class="slot-image">
+                <img src="./images/cherry.png" alt="Cherry" />
+              </div>
+            </div>
+            <div class="slot-item">
+              <div class="slot-image">
+                <img src="./images/grapes.png" alt="Grapes" />
+              </div>
+            </div>
+            <div class="slot-item">
+              <div class="slot-image">
+                <img src="./images/diamond.png" alt="Diamond" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="locks">
+          <button class="lock-btn" id="lockSlot-1">
+            <img
+              src="./images/unlocked-wepik-export-20231205082313d89Q.png"
+              alt="lock image"
+            />
+          </button>
+
+          <button class="lock-btn" id="lockSlot-2">
+            <img
+              src="./images/unlocked-wepik-export-20231205082313d89Q.png"
+              alt="lock image"
+            />
+          </button>
+
+          <button class="lock-btn" id="lockSlot-3">
+            <img
+              src="./images/unlocked-wepik-export-20231205082313d89Q.png"
+              alt="lock image"
+            />
+          </button>
+
+          <button class="lock-btn" id="lockSlot-4">
+            <img
+              src="./images/unlocked-wepik-export-20231205082313d89Q.png"
+              alt="lock image"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <p>&copy; 2023 Yahya Rouissi #413 JavaScript: Hedelmäpeli</p>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
