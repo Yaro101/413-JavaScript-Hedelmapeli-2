@@ -74,7 +74,7 @@ body {
 
 .score {
   margin-top: 1%;
-  width: 97%;
+  width: 98%;
   align-items: center;
   text-align: center;
 }
@@ -83,7 +83,7 @@ body {
   font-family: "Nunito", sans-serif;
   font-size: 2rem;
   color: #333;
-  padding: 10px;
+  padding: 7px;
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.8),
     1px 1px 1px rgba(0, 0, 0, 0.5);
   margin: 0;
@@ -112,9 +112,9 @@ body {
 }
 
 .rules img {
-  margin-top: 5%;
-  height: 15rem;
-  width: 100%;
+  margin-top: 2%;
+  height: 14rem;
+  width: 102%;
   background: linear-gradient(to top left, #9e94a0 0%, #c4151b 80%);
   padding: 10px;
   border-radius: 26px;
