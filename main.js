@@ -11,6 +11,45 @@ const items = [
     'luckyseven',
 ]
 
+// Function to update the DOM elements
+function updateDOM(element, value) {
+    element.textContent = `${value}€`
+}
+
+// Selecting DOM elements
+let moneyBox = document.querySelector(".money");
+let panoBox = document.querySelector(".pano");
+
+// Setting initial values
+let totalMoney = 50;
+updateDOM(moneyBox, totalMoney);
+let pano = 0;
+updateDOM(panoBox, pano);
+let selectedSlotImages = [];
+
+// Handeling Euros buttons
+document.getElementById("oneEuro").addEventListener("click", () => {
+    pano = 1;
+    totalMoney -= pano;
+    updateDOM(moneyBox, totalMoney);
+    updateDOM(panoBox, pano);
+})
+
+document.getElementById("twoEuro").addEventListener("click", () => {
+    pano = 2;
+    totalMoney -= pano;
+    updateDOM(moneyBox, totalMoney);
+    updateDOM(panoBox, pano);
+})
+
+document.getElementById("threeEuro").addEventListener("click", () => {
+    pano = 3;
+    totalMoney -= pano;
+    updateDOM(moneyBox, totalMoney);
+    updateDOM(panoBox, pano);
+})
+
+// Setting the initial value for locks
 const lockedSlots = [false, false, false, false];
 
 // Flag to check if played before
@@ -21,6 +60,16 @@ const slotImages = document.querySelectorAll('.slots > .slot-item > .slot-image 
 
 // Add click eventListener to PELAA button
 document.querySelector('.btnPelaa').addEventListener('click', () => {
+    spin();
+    const newSlotImages = document.querySelectorAll('.slots > .slot-item > .slot-image > img');
+    console.log(Array.from(newSlotImages).map(img => img.src));
+
+
+
+});
+
+
+function spin() {
     firstSpin = true;
 
     // document.querySelectorAll('img').forEach((imgEl) => {
@@ -45,9 +94,8 @@ document.querySelector('.btnPelaa').addEventListener('click', () => {
     setTimeout(() => {
         resetLockButtons();
     }, 2000);
-
-});
-
+}
+// console.log(Array.from(slotImages).map(img => img.src));
 // Function to animate the spinning of slot images
 const randomizeImgs = (imgEl, time) => {
     // Set an interval to change slot image at rapid rate
@@ -67,9 +115,15 @@ const chooseRandom = (imgEl) => {
     const randomItem = Math.floor(Math.random() * items.length)
     const selectedItem = items[randomItem];
     imgEl.src = `./images/${selectedItem}.png`
+
     // Add class animate for animation effect
     imgEl.classList.add('animate')
 };
+
+// Function that returns the chosen elements/images
+// function getChosenImgEl() {
+//     return Array.from(slotImages).map(img => img.src);
+// }
 
 
 // Function to handle lock button clicks
