@@ -64,8 +64,9 @@ document.querySelector('.btnPelaa').addEventListener('click', () => {
         const newSlotImages = document.querySelectorAll('.slots > .slot-item > .slot-image > img');
         // console.log(Array.from(newSlotImages).map(img => img.src));
         // extract item names
-        const SlotItems = Array.from(newSlotImages).map(img => extractItemName(img.src));
-        console.log(SlotItems);
+        const slotItems = Array.from(newSlotImages).map(img => extractItemName(img.src));
+        console.log(slotItems);
+        console.log(countOccurences(slotItems));
     });
 });
 
@@ -175,3 +176,19 @@ const extractItemName = (imgSrc) => {
     const itemName = fileName.replace(".png", "");
     return itemName;
 };
+
+// Function to check occurences
+function countOccurences(arr) {
+    const occurences = {};
+    // iterate through array
+    arr.forEach(element => {
+        // If element is not in occurences object initialize
+        if (!occurences[element]) {
+            occurences[element] = 1;
+        } else {
+            // if element is aöready in occurences object increment the count
+            occurences[element]++;
+        }
+    });
+    return occurences;
+}
