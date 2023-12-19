@@ -193,11 +193,11 @@ function countOccurences(arr) {
     return occurences;
 };
 
-/*function flashWin(duration) {
+/*function winAnimation(duration) {
     document.body.classList.add("win");
     setTimeout(() => {
         document.body.classList.remove("win");
     }, duration);
 }
 
-flashWin(2000);*/
+winAnimation(2000);*/
