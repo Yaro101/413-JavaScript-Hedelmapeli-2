@@ -30,17 +30,26 @@ let selectedSlotImages = [];
 // Handeling Euros buttons
 document.getElementById("oneEuro").addEventListener("click", () => {
     pano = 1;
-    updateDOM(panoBox, pano);
+    if (pano <= totalMoney) {
+        updateDOM(panoBox, pano);
+    } else alert("You don't have enough money");
+    return;
 })
 
 document.getElementById("twoEuro").addEventListener("click", () => {
     pano = 2;
-    updateDOM(panoBox, pano);
+    if (pano <= totalMoney) {
+        updateDOM(panoBox, pano);
+    } else alert("You don't have enough money");
+    return;
 })
 
 document.getElementById("threeEuro").addEventListener("click", () => {
     pano = 3;
-    updateDOM(panoBox, pano);
+    if (pano <= totalMoney) {
+        updateDOM(panoBox, pano);
+    } else alert("You don't have enough money");
+    return;
 })
 
 // Setting the initial value for locks
