@@ -30,22 +30,16 @@ let selectedSlotImages = [];
 // Handeling Euros buttons
 document.getElementById("oneEuro").addEventListener("click", () => {
     pano = 1;
-    totalMoney -= pano;
-    updateDOM(moneyBox, totalMoney);
     updateDOM(panoBox, pano);
 })
 
 document.getElementById("twoEuro").addEventListener("click", () => {
     pano = 2;
-    totalMoney -= pano;
-    updateDOM(moneyBox, totalMoney);
     updateDOM(panoBox, pano);
 })
 
 document.getElementById("threeEuro").addEventListener("click", () => {
     pano = 3;
-    totalMoney -= pano;
-    updateDOM(moneyBox, totalMoney);
     updateDOM(panoBox, pano);
 })
 
@@ -61,6 +55,7 @@ const slotImages = document.querySelectorAll('.slots > .slot-item > .slot-image 
 // Add click eventListener to PELAA button
 document.querySelector('.btnPelaa').addEventListener('click', () => {
     spin(() => {
+
         const newSlotImages = document.querySelectorAll('.slots > .slot-item > .slot-image > img');
         // console.log(Array.from(newSlotImages).map(img => img.src));
         // extract item names
@@ -73,6 +68,9 @@ document.querySelector('.btnPelaa').addEventListener('click', () => {
 // Spin function with callback
 function spin(callback) {
     firstSpin = true;
+    // updating the totalMoney in the DOM
+    totalMoney -= pano;
+    updateDOM(moneyBox, totalMoney);
 
     // document.querySelectorAll('img').forEach((imgEl) => {
     //     const randomItem = Math.floor(Math.random() * items.length)
