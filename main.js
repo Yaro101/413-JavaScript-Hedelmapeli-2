@@ -191,4 +191,13 @@ function countOccurences(arr) {
         }
     });
     return occurences;
+};
+
+/*function flashWin(duration) {
+    document.body.classList.add("win");
+    setTimeout(() => {
+        document.body.classList.remove("win");
+    }, duration);
 }
+
+flashWin(2000);*/
