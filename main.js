@@ -60,16 +60,17 @@ const slotImages = document.querySelectorAll('.slots > .slot-item > .slot-image 
 
 // Add click eventListener to PELAA button
 document.querySelector('.btnPelaa').addEventListener('click', () => {
-    spin();
-    const newSlotImages = document.querySelectorAll('.slots > .slot-item > .slot-image > img');
-    console.log(Array.from(newSlotImages).map(img => img.src));
-
-
-
+    spin(() => {
+        const newSlotImages = document.querySelectorAll('.slots > .slot-item > .slot-image > img');
+        // console.log(Array.from(newSlotImages).map(img => img.src));
+        // extract item names
+        const SlotItems = Array.from(newSlotImages).map(img => extractItemName(img.src));
+        console.log(SlotItems);
+    });
 });
 
-
-function spin() {
+// Spin function with callback
+function spin(callback) {
     firstSpin = true;
 
     // document.querySelectorAll('img').forEach((imgEl) => {
@@ -93,9 +94,10 @@ function spin() {
     // Set a timout for the resetting the locks
     setTimeout(() => {
         resetLockButtons();
-    }, 2000);
+        callback(); // call the callback function after the spinning is done
+    }, 4000);
 }
-// console.log(Array.from(slotImages).map(img => img.src));
+
 // Function to animate the spinning of slot images
 const randomizeImgs = (imgEl, time) => {
     // Set an interval to change slot image at rapid rate
@@ -164,4 +166,12 @@ const resetLockButtons = () => {
     });
     lockedSlots.fill(false);
 
+};
+
+// Function to extract the name of the item from the img src
+const extractItemName = (imgSrc) => {
+    const parts = imgSrc.split("/");
+    const fileName = parts[parts.length - 1];
+    const itemName = fileName.replace(".png", "");
+    return itemName;
 };
