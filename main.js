@@ -114,7 +114,6 @@ function spin(callback) {
     } else alert("Voit valita panos!!");
 }
 
-
 // Function to animate the spinning of slot images
 const randomizeImgs = (imgEl, time) => {
     // Set an interval to change slot image at rapid rate
@@ -150,11 +149,11 @@ const handleLock = (slotIndex) => {
     // Check if played before
     if (!firstSpin || !canBeLocked) {
         console.log(`first spin: ${firstSpin} can be locked: ${canBeLocked}`);
-        alert("Voit lokitse jot pelit");
+        alert("Voit lokitse jos pelit");
         return;
         // Check if max 2 lock are selected
     } else if (lockedSlots.filter(lock => lock).length >= 2) {
-        alert("Voit vain likitse 2");
+        alert("Voit vain lokitse 2");
         return;
     } else {
         // Toggle the lock status for the corresponding slot
@@ -183,7 +182,6 @@ const resetLockButtons = () => {
     });
     lockedSlots.fill(false);
     canBeLocked = !canBeLocked;
-
 };
 
 // Function to extract the name of the item from the img src
