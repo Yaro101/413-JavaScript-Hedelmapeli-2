@@ -25,7 +25,6 @@ let totalMoney = 50;
 updateDOM(moneyBox, totalMoney);
 let pano = 0;
 updateDOM(panoBox, pano);
-let selectedSlotImages = [];
 
 // Handeling Euros buttons
 document.getElementById("oneEuro").addEventListener("click", () => {
@@ -57,6 +56,7 @@ const lockedSlots = [false, false, false, false];
 
 // Flag to check if played before
 let firstSpin = false;
+let canBeLocked = false;
 
 // Select all slot images
 const slotImages = document.querySelectorAll('.slots > .slot-item > .slot-image > img');
@@ -71,6 +71,8 @@ document.querySelector('.btnPelaa').addEventListener('click', () => {
         const slotItems = Array.from(newSlotImages).map(img => extractItemName(img.src));
         console.log(slotItems);
         console.log(countOccurences(slotItems));
+        console.log(`can be locked: ${canBeLocked}`);
+        console.log(`first spin: ${firstSpin}`);
     });
 });
 
@@ -105,7 +107,7 @@ function spin(callback) {
             resetLockButtons();
             callback(); // call the callback function after the spinning is done
         }, 4000);
-    } else alert("valita panos!!");
+    } else alert("Voit valita panos!!");
 }
 
 
@@ -142,7 +144,8 @@ const chooseRandom = (imgEl) => {
 // Function to handle lock button clicks
 const handleLock = (slotIndex) => {
     // Check if played before
-    if (!firstSpin) {
+    if (!firstSpin || !canBeLocked) {
+        console.log(`first spin: ${firstSpin} can be locked: ${canBeLocked}`);
         alert("Voit lokitse jot pelit");
         return;
         // Check if max 2 lock are selected
@@ -175,6 +178,7 @@ const resetLockButtons = () => {
         lockBtn.style.borderBlockColor = "initial";
     });
     lockedSlots.fill(false);
+    canBeLocked = !canBeLocked;
 
 };
 
