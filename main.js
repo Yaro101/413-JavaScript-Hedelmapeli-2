@@ -70,9 +70,12 @@ document.querySelector('.btnPelaa').addEventListener('click', () => {
         // extract item names
         const slotItems = Array.from(newSlotImages).map(img => extractItemName(img.src));
         console.log(slotItems);
-        console.log(countOccurences(slotItems));
+        const slotSet = countOccurences(slotItems);
+        console.log(slotSet);
         console.log(`can be locked: ${canBeLocked}`);
         console.log(`first spin: ${firstSpin}`);
+        // to do compare value of slotSet (slotSet = total values of )
+
     });
 });
 
@@ -214,3 +217,113 @@ function countOccurences(arr) {
 }
 
 winAnimation(2000);*/
+
+function checkSlotsForWin(object) {
+    let numberOfItems = Object.keys(object).length;
+    if (numberOfItems <= 2) {
+        // Lucky Seven
+        if ('luckyseven' in object && object['luckyseven'] === 4) {
+            let gain = pano * 17;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+        } else if ('luckyseven' in object && object['luckyseven'] === 3) {
+            let gain = pano * 5;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+            // 'Cherry'
+        } else if ('cherry' in object && object['cherry'] === 4) {
+            let gain = pano * 2;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+        } else if ('cherry' in object && 'magicmushrooms' in object && object['magicmushrooms'] + object['cherry'] === 4) {
+            let gain = pano * 2;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+            // Grapes
+        } else if ('grapes' in object && object['grapes'] === 4) {
+            let gain = pano * 3;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+        } else if ('grapes' in object && 'magicmushrooms' in object && object['grapes'] + object['magicmushrooms'] === 4) {
+            let gain = pano * 3;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+            // Lemon
+        } else if ('lemon' in object && object['lemon'] === 4) {
+            let gain = pano * 3;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+        } else if ('lemon' in object && 'magicmushrooms' in object && object['lemon'] + object['magicmushrooms'] === 4) {
+            let gain = pano * 3;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+            // Watermelon
+        } else if ('watermelon' in object && object['watermelon'] === 4) {
+            let gain = pano * 4;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+        } else if ('watermelon' in object && 'magicmushrooms' in object && object['watermelon'] + object['magicmushrooms'] === 4) {
+            let gain = pano * 4;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+            // Goldenbell
+        } else if ('goldenbell' in object && object['goldenbell'] === 4) {
+            let gain = pano * 8;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+        } else if ('goldenbell' in object && 'magicmushrooms' in object && object['goldenbell'] + object['magicmushrooms'] === 4) {
+            let gain = pano * 8;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+            // Diamond
+        } else if ('diamond' in object && object['diamond'] === 4) {
+            let gain = pano * 10;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+        } else if ('diamond' in object && 'magicmushrooms' in object && object['diamond'] + object['magicmushrooms'] === 4) {
+            let gain = pano * 10;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+            // MegaJackpot
+        } else if ('megajackpot' in object && object['megajackpot'] === 4) {
+            let gain = pano * 25;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+        } else if ('megajackpot' in object && 'magicmushrooms' in object && object['megajackpot'] + object['magicmushrooms'] === 4) {
+            let gain = pano * 25;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+            // Jokeri 
+        } else if ('magicmushrooms' in object && object['magicmushrooms'] === 4) {
+            let gain = pano * 1;
+            alert(`Voitit ${gain}€ panosi takaisin`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+        }
+
+
+    } else if (numberOfItems === 3 && 'magicmushrooms' in object && 'luckyseven' in object) {
+        if ((object['magicmushrooms'] + object['luckyseven']) = 3) {
+            let gain = pano * 5;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
+        } else return;
+    } else return;
+}
