@@ -322,8 +322,7 @@ function checkSlotsForWin(object) {
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         }
-
-
+        // other case for Lucky Seven
     } else if (numberOfItems === 3 && 'magicmushrooms' in object && 'luckyseven' in object && (object['magicmushrooms'] + object['luckyseven']) === 3) {
         let gain = pano * 5;
         alert(`Voitit ${gain}€`);
