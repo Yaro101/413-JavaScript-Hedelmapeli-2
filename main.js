@@ -74,7 +74,8 @@ document.querySelector('.btnPelaa').addEventListener('click', () => {
         console.log(slotSet);
         console.log(`can be locked: ${canBeLocked}`);
         console.log(`first spin: ${firstSpin}`);
-        // to do compare value of slotSet (slotSet = total values of )
+        // Check the slots
+        checkSlotsForWin(slotSet);
 
     });
 });
@@ -227,6 +228,11 @@ function checkSlotsForWin(object) {
             alert(`Voitit ${gain}€`);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
+        } else if ('luckyseven' in object && 'magicmushrooms' in object && object['magicmushrooms'] + object['luckyseven'] === 4) {
+            let gain = pano * 17;
+            alert(`Voitit ${gain}€`);
+            totalMoney += gain;
+            updateDOM(moneyBox, totalMoney);
         } else if ('luckyseven' in object && object['luckyseven'] === 3) {
             let gain = pano * 5;
             alert(`Voitit ${gain}€`);
@@ -318,12 +324,10 @@ function checkSlotsForWin(object) {
         }
 
 
-    } else if (numberOfItems === 3 && 'magicmushrooms' in object && 'luckyseven' in object) {
-        if ((object['magicmushrooms'] + object['luckyseven']) = 3) {
-            let gain = pano * 5;
-            alert(`Voitit ${gain}€`);
-            totalMoney += gain;
-            updateDOM(moneyBox, totalMoney);
-        } else return;
+    } else if (numberOfItems === 3 && 'magicmushrooms' in object && 'luckyseven' in object && (object['magicmushrooms'] + object['luckyseven']) === 3) {
+        let gain = pano * 5;
+        alert(`Voitit ${gain}€`);
+        totalMoney += gain;
+        updateDOM(moneyBox, totalMoney);
     } else return;
 }
