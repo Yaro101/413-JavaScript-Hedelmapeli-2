@@ -76,35 +76,38 @@ document.querySelector('.btnPelaa').addEventListener('click', () => {
 
 // Spin function with callback
 function spin(callback) {
-    firstSpin = true;
-    // updating the totalMoney in the DOM
-    totalMoney -= pano;
-    updateDOM(moneyBox, totalMoney);
+    if (pano > 0) {
+        firstSpin = true;
+        // updating the totalMoney in the DOM
+        totalMoney -= pano;
+        updateDOM(moneyBox, totalMoney);
 
-    // document.querySelectorAll('img').forEach((imgEl) => {
-    //     const randomItem = Math.floor(Math.random() * items.length)
-    //     const selectedItem = items[randomItem];
-    //     imgEl.src = `./images/${selectedItem}.png`
-    // })
+        // document.querySelectorAll('img').forEach((imgEl) => {
+        //     const randomItem = Math.floor(Math.random() * items.length)
+        //     const selectedItem = items[randomItem];
+        //     imgEl.src = `./images/${selectedItem}.png`
+        // })
 
-    // Iterate over each slot image
-    slotImages.forEach((imgEl, index) => {
-        if (!lockedSlots[index]) {
-            // Calculate a random time delay for each slot to start spinning
-            const randomTime = 1000 + 1000 * index
-            // Initiate the spinning animation for each slot
-            randomizeImgs(imgEl, randomTime)
-        }
-        // setTimeout(() => {
-        //     chooseRandom(imgEl)
-        // }, randomTime);
-    });
-    // Set a timout for the resetting the locks
-    setTimeout(() => {
-        resetLockButtons();
-        callback(); // call the callback function after the spinning is done
-    }, 4000);
+        // Iterate over each slot image
+        slotImages.forEach((imgEl, index) => {
+            if (!lockedSlots[index]) {
+                // Calculate a random time delay for each slot to start spinning
+                const randomTime = 1000 + 1000 * index
+                // Initiate the spinning animation for each slot
+                randomizeImgs(imgEl, randomTime)
+            }
+            // setTimeout(() => {
+            //     chooseRandom(imgEl)
+            // }, randomTime);
+        });
+        // Set a timout for the resetting the locks
+        setTimeout(() => {
+            resetLockButtons();
+            callback(); // call the callback function after the spinning is done
+        }, 4000);
+    } else alert("valita panos!!");
 }
+
 
 // Function to animate the spinning of slot images
 const randomizeImgs = (imgEl, time) => {
@@ -142,21 +145,20 @@ const handleLock = (slotIndex) => {
     if (!firstSpin) {
         alert("Voit lokitse jot pelit");
         return;
-    }
-
-    // Check if max 2 lock are selected
-    if (lockedSlots.filter(lock => lock).length >= 2) {
+        // Check if max 2 lock are selected
+    } else if (lockedSlots.filter(lock => lock).length >= 2) {
         alert("Voit vain likitse 2");
         return;
+    } else {
+        // Toggle the lock status for the corresponding slot
+        lockedSlots[slotIndex] = !lockedSlots[slotIndex];
+        // Get lock button element
+        const lockBtn = document.getElementById(`lockSlot-${slotIndex + 1}`);
+        // Change the lock button image
+        lockBtn.querySelector('img').src = lockedSlots[slotIndex] ? "./images/locked-wepik-export-20231205081314klvF.png" : "./images/unlocked-wepik-export-20231205082313d89Q.png"
+        // Change the border color based on the lock status
+        lockBtn.style.borderBlockColor = lockedSlots[slotIndex] ? "gold" : "initial";
     }
-    // Toggle the lock status for the corresponding slot
-    lockedSlots[slotIndex] = !lockedSlots[slotIndex];
-    // Get lock button element
-    const lockBtn = document.getElementById(`lockSlot-${slotIndex + 1}`);
-    // Change the lock button image
-    lockBtn.querySelector('img').src = lockedSlots[slotIndex] ? "./images/locked-wepik-export-20231205081314klvF.png" : "./images/unlocked-wepik-export-20231205082313d89Q.png"
-    // Change the border color based on the lock status
-    lockBtn.style.borderBlockColor = lockedSlots[slotIndex] ? "gold" : "initial";
 }
 
 // Add event listener to each lock button
