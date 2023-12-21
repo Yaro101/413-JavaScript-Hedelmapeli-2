@@ -83,34 +83,36 @@ document.querySelector('.btnPelaa').addEventListener('click', () => {
 // Spin function with callback
 function spin(callback) {
     if (pano > 0) {
-        firstSpin = true;
-        // updating the totalMoney in the DOM
-        totalMoney -= pano;
-        updateDOM(moneyBox, totalMoney);
+        if (totalMoney - pano >= 0) {
+            firstSpin = true;
+            // updating the totalMoney in the DOM
+            totalMoney -= pano;
+            updateDOM(moneyBox, totalMoney);
 
-        // document.querySelectorAll('img').forEach((imgEl) => {
-        //     const randomItem = Math.floor(Math.random() * items.length)
-        //     const selectedItem = items[randomItem];
-        //     imgEl.src = `./images/${selectedItem}.png`
-        // })
+            // document.querySelectorAll('img').forEach((imgEl) => {
+            //     const randomItem = Math.floor(Math.random() * items.length)
+            //     const selectedItem = items[randomItem];
+            //     imgEl.src = `./images/${selectedItem}.png`
+            // })
 
-        // Iterate over each slot image
-        slotImages.forEach((imgEl, index) => {
-            if (!lockedSlots[index]) {
-                // Calculate a random time delay for each slot to start spinning
-                const randomTime = 1000 + 1000 * index
-                // Initiate the spinning animation for each slot
-                randomizeImgs(imgEl, randomTime)
-            }
-            // setTimeout(() => {
-            //     chooseRandom(imgEl)
-            // }, randomTime);
-        });
-        // Set a timout for the resetting the locks
-        setTimeout(() => {
-            resetLockButtons();
-            callback(); // call the callback function after the spinning is done
-        }, 4000);
+            // Iterate over each slot image
+            slotImages.forEach((imgEl, index) => {
+                if (!lockedSlots[index]) {
+                    // Calculate a random time delay for each slot to start spinning
+                    const randomTime = 1000 + 1000 * index
+                    // Initiate the spinning animation for each slot
+                    randomizeImgs(imgEl, randomTime)
+                }
+                // setTimeout(() => {
+                //     chooseRandom(imgEl)
+                // }, randomTime);
+            });
+            // Set a timout for the resetting the locks
+            setTimeout(() => {
+                resetLockButtons();
+                callback(); // call the callback function after the spinning is done
+            }, 4000);
+        } else alert("You don't have credit!!");
     } else alert("Voit valita panos!!");
 }
 
