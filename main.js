@@ -213,7 +213,7 @@ function countOccurences(arr) {
 
 // Function to create an overlay with message of winning
 function winAnimation(duration) {
-    document.getElementById('winText').innerHTML = `Voitit ${gain} 🤑🤑🤑`;
+    document.getElementById('winText').innerHTML = `Voitit ${gain}€ 🤑🤑🤑`;
     document.getElementById('win').style.display = "block";
     setTimeout(() => {
         document.getElementById('win').style.display = "none";
