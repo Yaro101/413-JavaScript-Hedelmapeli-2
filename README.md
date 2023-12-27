@@ -1,6 +1,7 @@
 # Hedelmäpeli
 
 Tämä on yksinkertainen kolikkopeli, joka on toteutettu HTML:n, CSS:n ja JavaScriptin avulla.
+[Kokeile täältä](https://yaro101.github.io/413-JavaScript-Hedelmapeli-2/)
 
 ## Table of contents
 
@@ -72,6 +73,7 @@ Tässä projektissa saatetaan käyttää kolmannen osapuolen kirjastoja tai työ
 # Hedelmäpeli - Slot Machine Game
 
 This is a simple slot machine game implemented using HTML, CSS and JavaScript.
+[Try it!](https://yaro101.github.io/413-JavaScript-Hedelmapeli-2/)
 
 ## Table of contents
 
