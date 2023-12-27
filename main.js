@@ -152,7 +152,7 @@ const handleLock = (slotIndex) => {
     // Check if played before
     if (!firstSpin || !canBeLocked) {
         console.log(`first spin: ${firstSpin} can be locked: ${canBeLocked}`);
-        alert("Voit lokitse jos pelit");
+        alert("Voit käyttää lukkoja seuraavalla kerralla");
         return;
         // Check if max 2 lock are selected
     } else if (lockedSlots.filter(lock => lock).length >= 2) {
