@@ -32,7 +32,7 @@ document.getElementById("oneEuro").addEventListener("click", () => {
     pano = 1;
     if (pano <= totalMoney) {
         updateDOM(panoBox, pano);
-    } else alert("You don't have enough money");
+    } else alert("Sinulla ei ole tarpeeksi rahaa!!");
     return;
 })
 
@@ -40,7 +40,7 @@ document.getElementById("twoEuro").addEventListener("click", () => {
     pano = 2;
     if (pano <= totalMoney) {
         updateDOM(panoBox, pano);
-    } else alert("You don't have enough money");
+    } else alert("Sinulla ei ole tarpeeksi rahaa!!");
     return;
 })
 
@@ -48,7 +48,7 @@ document.getElementById("threeEuro").addEventListener("click", () => {
     pano = 3;
     if (pano <= totalMoney) {
         updateDOM(panoBox, pano);
-    } else alert("You don't have enough money");
+    } else alert("Sinulla ei ole tarpeeksi rahaa!!");
     return;
 })
 
@@ -113,7 +113,7 @@ function spin(callback) {
                 resetLockButtons();
                 callback(); // call the callback function after the spinning is done
             }, 4000);
-        } else alert("You don't have credit!!");
+        } else alert("Sinulla ei ole luottoa!!");
     } else alert("Voit valita panos!!");
 }
 
