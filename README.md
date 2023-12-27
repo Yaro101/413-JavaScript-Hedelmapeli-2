@@ -60,7 +60,7 @@ Tässä projektissa saatetaan käyttää kolmannen osapuolen kirjastoja tai työ
 - slot-machine kuva, jonka on suunnitellut katemangostar osoitteesta Freepik.
 - euro-ikonin kuvan on suunnitellut Md Tanvirul Haque Freepikistä.
 - lukon kuvan on suunnitellut uplyak Wepikistä.
-- kiekkokuvia Freepikistä.
+- Aukkokuvat ovat ilmaisia pngwing.com-sivustolta, mutta ne ovat tarkoitettu ei-kaupalliseen käyttöön.
 - rules.png, jonka on suunnitellut kirjoittaja Yahya Rouissi Canva.com-sivustolla.
 - kuvien koon muuttaminen tapahtuu imageresizer.com-sivustolla.
 
@@ -132,7 +132,7 @@ This project may use third-party libraries or tools that have their own licenses
 - slot-machine photo designed by katemangostar from Freepik.
 - euro-icon photo designed by Md Tanvirul Haque from Freepik.
 - lock photo designed by uplyak from Wepik.
-- reels photos from Freepik.
+- slot pictures are free from pngwing.com but for non commercial use.
 - rules.png designed by author Yahya Rouissi on Canva.com.
 - images resizing done on imageresizer.com.
 
