@@ -25,6 +25,7 @@ let totalMoney = 50;
 updateDOM(moneyBox, totalMoney);
 let pano = 0;
 updateDOM(panoBox, pano);
+let gain = 0;
 
 // Handeling Euros buttons
 document.getElementById("oneEuro").addEventListener("click", () => {
@@ -203,129 +204,150 @@ function countOccurences(arr) {
         if (!occurences[element]) {
             occurences[element] = 1;
         } else {
-            // if element is aöready in occurences object increment the count
+            // if element is already in occurences object increment the count
             occurences[element]++;
         }
     });
     return occurences;
 };
 
-/*function winAnimation(duration) {
-    document.body.classList.add("win");
+// Function to create an overlay with message of winning
+function winAnimation(duration) {
+    document.getElementById('winText').innerHTML = `Voitit ${gain} 🤑🤑🤑`;
+    document.getElementById('win').style.display = "block";
     setTimeout(() => {
-        document.body.classList.remove("win");
+        document.getElementById('win').style.display = "none";
     }, duration);
 }
 
-winAnimation(2000);*/
+// winAnimation(2000);
 
 function checkSlotsForWin(object) {
     let numberOfItems = Object.keys(object).length;
     if (numberOfItems <= 2) {
         // Lucky Seven
         if ('luckyseven' in object && object['luckyseven'] === 4) {
-            let gain = pano * 17;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 17;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         } else if ('luckyseven' in object && 'magicmushrooms' in object && object['magicmushrooms'] + object['luckyseven'] === 4) {
-            let gain = pano * 17;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 17;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         } else if ('luckyseven' in object && object['luckyseven'] === 3) {
-            let gain = pano * 5;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 5;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
             // 'Cherry'
         } else if ('cherry' in object && object['cherry'] === 4) {
-            let gain = pano * 2;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 2;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         } else if ('cherry' in object && 'magicmushrooms' in object && object['magicmushrooms'] + object['cherry'] === 4) {
-            let gain = pano * 2;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 2;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
             // Grapes
         } else if ('grapes' in object && object['grapes'] === 4) {
-            let gain = pano * 3;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 3;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         } else if ('grapes' in object && 'magicmushrooms' in object && object['grapes'] + object['magicmushrooms'] === 4) {
-            let gain = pano * 3;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 3;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
             // Lemon
         } else if ('lemon' in object && object['lemon'] === 4) {
-            let gain = pano * 3;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 3;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         } else if ('lemon' in object && 'magicmushrooms' in object && object['lemon'] + object['magicmushrooms'] === 4) {
-            let gain = pano * 3;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 3;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
             // Watermelon
         } else if ('watermelon' in object && object['watermelon'] === 4) {
-            let gain = pano * 4;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 4;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         } else if ('watermelon' in object && 'magicmushrooms' in object && object['watermelon'] + object['magicmushrooms'] === 4) {
-            let gain = pano * 4;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 4;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
             // Goldenbell
         } else if ('goldenbell' in object && object['goldenbell'] === 4) {
-            let gain = pano * 8;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 8;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         } else if ('goldenbell' in object && 'magicmushrooms' in object && object['goldenbell'] + object['magicmushrooms'] === 4) {
-            let gain = pano * 8;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 8;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
             // Diamond
         } else if ('diamond' in object && object['diamond'] === 4) {
-            let gain = pano * 10;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 10;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         } else if ('diamond' in object && 'magicmushrooms' in object && object['diamond'] + object['magicmushrooms'] === 4) {
-            let gain = pano * 10;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 10;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
             // MegaJackpot
         } else if ('megajackpot' in object && object['megajackpot'] === 4) {
-            let gain = pano * 25;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 25;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         } else if ('megajackpot' in object && 'magicmushrooms' in object && object['megajackpot'] + object['magicmushrooms'] === 4) {
-            let gain = pano * 25;
-            alert(`Voitit ${gain}€`);
+            gain = pano * 25;
+            // alert(`Voitit ${gain}€`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
             // Jokeri 
         } else if ('magicmushrooms' in object && object['magicmushrooms'] === 4) {
-            let gain = pano * 1;
-            alert(`Voitit ${gain}€ panosi takaisin`);
+            gain = pano * 1;
+            // alert(`Voitit ${gain}€ panosi takaisin`);
+            winAnimation(3000);
             totalMoney += gain;
             updateDOM(moneyBox, totalMoney);
         }
         // other case for Lucky Seven
     } else if (numberOfItems === 3 && 'magicmushrooms' in object && 'luckyseven' in object && (object['magicmushrooms'] + object['luckyseven']) === 3) {
-        let gain = pano * 5;
-        alert(`Voitit ${gain}€`);
+        gain = pano * 5;
+        // alert(`Voitit ${gain}€`);
+        winAnimation(3000);
         totalMoney += gain;
         updateDOM(moneyBox, totalMoney);
     } else return;
