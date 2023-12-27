@@ -1,4 +1,4 @@
-#Hedelmäpeli - Slot Machine Game
+# Hedelmäpeli - Slot Machine Game
 
 This is a simple slot machine game implemented using HTML, CSS and JavaScript.
 
